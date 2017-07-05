@@ -1,0 +1,31 @@
+---
+title: "Practica3UdemyReporte"
+author: "Emmanuel Ortiz"
+date: "2 de junio de 2017"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+Liverpool & Elektra
+========================================================
+```{r echo=TRUE, results='hide', message=FALSE} 
+library(quantmod)
+getSymbols(c('BMV:LIVEPOLC-1','BMV:ELEKTRA'), src='google') 
+
+```
+My setup on Liverpool
+
+```{r}
+liverpool<-`BMV:LIVEPOLC-1`
+chartSeries(liverpool, theme="white", TA="addVo();addBBands();addCCI()", subset='2017')
+```
+My setup on Elektra ...
+```{r}
+chartSeries(`BMV:ELEKTRA`, theme="white", TA="addVo();addBBands();addCCI()", subset='2017')
+```
+
+
